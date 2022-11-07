@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleprovider);
   };
   const logout = () => {
-    return signOut();
+    return signOut(auth);
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
