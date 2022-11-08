@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { ImCross } from "react-icons/im";
+import { Link } from "react-router-dom";
 
 const Reviews = () => {
   const { user } = useContext(AuthContext);
@@ -36,7 +37,11 @@ const Reviews = () => {
           <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 ">
             <figure className="justify-center items-center p-8 text-center bg-white rounded-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
               <div className="flex justify-end items-center ">
-                <button className="btn btn-outline btn-xs mr-2">Update</button>
+                <Link to={`/updatereview/${review._id}`}>
+                  <button className="btn btn-outline btn-xs mr-2">
+                    Update
+                  </button>
+                </Link>
                 <button onClick={() => handledelete(review._id)}>
                   <ImCross className="cursor-pointer"></ImCross>
                 </button>
