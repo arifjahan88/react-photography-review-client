@@ -15,7 +15,7 @@ const Navber = () => {
         <Link to="/">Home</Link>
         <Link to="/services">Services</Link>
         <Link>Blog</Link>
-        <Link>Review</Link>
+        <Link to="/reviews">Reviews</Link>
         {user?.uid ? (
           <Link>
             <button onClick={Handlelogout}>Log Out</button>

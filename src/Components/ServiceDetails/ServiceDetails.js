@@ -1,8 +1,11 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Contexts/AuthProvider";
+import ServiceReview from "../ServiceReview/ServiceReview";
 
 const ServiceDetails = () => {
-  const { description, img, name, price, _id } = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const { description, img, name, price } = useLoaderData();
 
   return (
     <div>
@@ -24,6 +27,18 @@ const ServiceDetails = () => {
           </div>
         </div>
       </div>
+      {user?.uid ? (
+        <ServiceReview></ServiceReview>
+      ) : (
+        <>
+          <p className="text-5xl font-bold text-center p-8">
+            Please Login to review ! !
+          </p>
+          <Link to="/login">
+            <p className="link text-center mb-5">Go to Login Page. . . .</p>
+          </Link>
+        </>
+      )}
     </div>
   );
 };
