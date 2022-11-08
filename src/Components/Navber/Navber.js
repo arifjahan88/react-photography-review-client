@@ -13,7 +13,7 @@ const Navber = () => {
     <>
       <li>
         <Link to="/">Home</Link>
-        <Link>Services</Link>
+        <Link to="/services">Services</Link>
         <Link>Blog</Link>
         <Link>Review</Link>
         {user?.uid ? (
