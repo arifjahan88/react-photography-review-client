@@ -34,10 +34,9 @@ const UpdateReview = () => {
   };
   return (
     <div>
-      <h2>Please Update : {storeduser.urername}</h2>
       <div>
         <h2 className="text-4xl font-mono font-bold text-center py-10">
-          Please Update our Review !
+          Please Update your Review {storeduser.urername} !
         </h2>
         <form onSubmit={HandleUpdate} className="p-5 container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">

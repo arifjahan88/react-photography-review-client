@@ -34,7 +34,7 @@ const Reviews = () => {
     <div className="grid grid-cols-2 gap-6 container mx-auto">
       {reviews.map((review) => (
         <>
-          <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 ">
+          <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 p-8">
             <figure className="justify-center items-center p-8 text-center bg-white rounded-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
               <div className="flex justify-end items-center ">
                 <Link to={`/updatereview/${review._id}`}>
