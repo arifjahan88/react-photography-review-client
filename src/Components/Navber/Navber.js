@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import logo from "../Assets/nav logo/navicon.png";
 
 const Navber = () => {
   const { user, logout } = useContext(AuthContext);
@@ -58,7 +59,17 @@ const Navber = () => {
               {navoptions}
             </ul>
           </div>
-          <p className="btn btn-ghost normal-case text-xl">Lens Graphy</p>
+
+          <Link to="/">
+            <div className="flex justify-center items-center ml-5">
+              <div>
+                <img className="w-11" src={logo} alt="" />
+              </div>
+              <p className=" text-2xl ml-2 font-mono mt-2 font-semibold">
+                Lens Graphy
+              </p>
+            </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{navoptions}</ul>

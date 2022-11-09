@@ -26,7 +26,7 @@ const AddService = () => {
       .then((data) => {
         if (data.acknowledged) {
           console.log(data);
-          alert("Your Service is Added");
+          alert("Your Service is Added. Please Check Service Page");
           form.reset();
         }
       })
@@ -54,7 +54,7 @@ const AddService = () => {
             <div>
               <label className="label">
                 <span className="label-text">
-                  Photo Url (Your Photo must be (600px X 600px))
+                  Photo Url (Your Photo must be (1000px X 1200px))
                 </span>
               </label>
               <input
