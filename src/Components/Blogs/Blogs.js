@@ -4,7 +4,7 @@ const Blogs = () => {
   return (
     <div className="lg:mt-10">
       <div className="grid grid-cols-1 justify-items-center">
-        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-3/6">
+        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-4/6">
           <h2 className="text-2xl font-mono font-bold text-sky-600">
             What is the Difference between SQL and NoSQL?
           </h2>
@@ -23,7 +23,7 @@ const Blogs = () => {
             judgments about which to utilize.
           </p>
         </div>
-        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-3/6">
+        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-4/6">
           <h2 className="text-2xl font-mono font-bold text-sky-600">
             What is JWT, and how does it work?
           </h2>
@@ -42,7 +42,7 @@ const Blogs = () => {
             only the party in possession of the private key signed the token.
           </p>
         </div>
-        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-3/6">
+        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-4/6">
           <h2 className="text-2xl font-mono font-bold text-sky-600">
             What is the difference between javascript and Node JS?
           </h2>
@@ -62,7 +62,7 @@ const Blogs = () => {
             better choice.
           </p>
         </div>
-        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-3/6">
+        <div className="m-5 bg-pink-50 p-7 rounded-lg lg:w-4/6">
           <h2 className="text-2xl font-mono font-bold text-sky-600">
             How does Node JS handle multiple requests at the same time?
           </h2>
