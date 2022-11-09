@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
+import useTitle from "../Titlehooks/TitleHooks";
 
 const Reviews = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setreviews] = useState([]);
+  useTitle("My Reviews");
   console.log(reviews);
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)

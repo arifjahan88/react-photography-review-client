@@ -3,10 +3,12 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import useTitle from "../Titlehooks/TitleHooks";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle("Login");
   const from = location.state?.from?.pathname || "/";
   const { logIn, googlelogin } = useContext(AuthContext);
   const HandleLogin = (event) => {

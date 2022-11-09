@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "react-photo-view/dist/react-photo-view.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import useTitle from "../Titlehooks/TitleHooks";
 
 const Services = () => {
   const [services, setservices] = useState([]);
+  useTitle("Services");
 
   useEffect(() => {
     fetch("http://localhost:5000/service")

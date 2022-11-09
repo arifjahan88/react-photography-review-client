@@ -3,9 +3,11 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import useTitle from "../Titlehooks/TitleHooks";
 
 const Register = () => {
   const { createuser, googlelogin } = useContext(AuthContext);
+  useTitle("Register");
   const HandleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;

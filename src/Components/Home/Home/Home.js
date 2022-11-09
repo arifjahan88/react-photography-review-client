@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../Titlehooks/TitleHooks";
 import ServiceCard from "../ServiceCard.js/ServiceCard";
 
 const Home = () => {
   const [limitservice, setlimitsservice] = useState([]);
+  useTitle("Home");
   useEffect(() => {
     fetch("http://localhost:5000/limitservice")
       .then((res) => res.json())

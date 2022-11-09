@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import ServiceReview from "../ServiceReview/ServiceReview";
+import useTitle from "../Titlehooks/TitleHooks";
 import AllReviews from "./AllReviews";
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   const { description, img, name, price } = useLoaderData();
+  useTitle("Service Details");
 
   return (
     <div>

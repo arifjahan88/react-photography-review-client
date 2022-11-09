@@ -1,8 +1,10 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
+import useTitle from "../Titlehooks/TitleHooks";
 
 const UpdateReview = () => {
   const navigate = useNavigate();
   const storeduser = useLoaderData();
+  useTitle("Update Review");
 
   const HandleUpdate = (event) => {
     event.preventDefault();
