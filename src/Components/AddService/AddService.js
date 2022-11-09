@@ -37,7 +37,7 @@ const AddService = () => {
     <div>
       <div>
         <h2 className="text-4xl font-mono font-bold text-center py-10">
-          Please Update your Review !
+          Please Add your Service !
         </h2>
         <form onSubmit={Handleadd} className="p-5 container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">

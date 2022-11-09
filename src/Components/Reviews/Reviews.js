@@ -33,7 +33,7 @@ const Reviews = () => {
   return (
     <div>
       {user?.uid ? (
-        <div className="grid grid-cols-2 gap-6 container mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 container mx-auto">
           {reviews.map((review) => (
             <>
               <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 p-8">
@@ -83,6 +83,15 @@ const Reviews = () => {
           </Link>
         </>
       )}
+      <div>
+        {reviews.length <= 0 && user?.uid && (
+          <>
+            <p className="text-center font-mono font-bold text-5xl mt-24 mb-5">
+              There is no Review. Please Review.
+            </p>
+          </>
+        )}
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import ServiceReview from "../ServiceReview/ServiceReview";
+import AllReviews from "./AllReviews";
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
@@ -22,8 +23,7 @@ const ServiceDetails = () => {
           </div>
           <p>{description}</p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+            <div className="badge badge-outline">PhotoGraphy</div>
           </div>
         </div>
       </div>
@@ -39,6 +39,7 @@ const ServiceDetails = () => {
           </Link>
         </>
       )}
+      <AllReviews></AllReviews>
     </div>
   );
 };
