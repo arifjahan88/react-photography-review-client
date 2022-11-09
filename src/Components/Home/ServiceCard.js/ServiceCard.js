@@ -8,7 +8,7 @@ const ServiceCard = ({ limitservice }) => {
           <img
             alt=""
             src={limitservice.img}
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="lg:max-w-sm rounded-lg shadow-2xl"
           />
           <div>
             <h1 className="text-5xl font-bold">{limitservice.name}</h1>
@@ -18,7 +18,6 @@ const ServiceCard = ({ limitservice }) => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

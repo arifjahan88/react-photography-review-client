@@ -15,7 +15,7 @@ const Navber = () => {
       <li>
         <Link to="/">Home</Link>
         <Link to="/services">Services</Link>
-        <Link>Blog</Link>
+        <Link to="/blogs">Blog</Link>
         {user?.uid && (
           <>
             <Link to="/reviews">My Reviews</Link>
