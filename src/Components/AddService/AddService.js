@@ -11,12 +11,13 @@ const AddService = () => {
     const img = form.photourl.value;
     const price = form.price.value;
     const description = form.review.value;
-    console.log(name, img, price, description);
+    const timestamp = new Date().getTime();
     const addService = {
       name,
       img,
       price,
       description,
+      timestamp,
     };
     fetch("http://localhost:5000/service", {
       method: "POST",
