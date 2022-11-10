@@ -32,6 +32,7 @@ const AuthProvider = ({ children }) => {
   };
   const logout = () => {
     setloading(true);
+    localStorage.removeItem("photoToken");
     return signOut(auth);
   };
   useEffect(() => {

@@ -5,21 +5,33 @@ import { Link } from "react-router-dom";
 import useTitle from "../Titlehooks/TitleHooks";
 
 const Reviews = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const [reviews, setreviews] = useState([]);
   useTitle("My Reviews");
-  console.log(reviews);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("photoToken")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logout();
+        }
+        return res.json();
+      })
       .then((data) => setreviews(data));
-  }, [user]);
+  }, [user, logout]);
 
   const handledelete = (id) => {
     const proceed = window.confirm("Are you sure to Delete?");
     if (proceed) {
       fetch(`http://localhost:5000/reviews/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("photoToken")}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
@@ -38,7 +50,7 @@ const Reviews = () => {
         <div className="grid lg:grid-cols-2 gap-6 container mx-auto">
           {reviews.map((review) => (
             <>
-              <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 p-8">
+              <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 p-2 my-8">
                 <figure className="justify-center items-center p-8 text-center bg-white rounded-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                   <div className="flex justify-end items-center ">
                     <Link to={`/updatereview/${review._id}`}>

@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../Titlehooks/TitleHooks";
 
 const Blogs = () => {
+  useTitle("Blogs");
   return (
     <div className="lg:mt-10">
       <div className="grid grid-cols-1 justify-items-center">
