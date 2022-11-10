@@ -31,8 +31,8 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleprovider);
   };
   const logout = () => {
-    setloading(true);
     localStorage.removeItem("photoToken");
+    setloading(true);
     return signOut(auth);
   };
   useEffect(() => {

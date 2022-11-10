@@ -20,7 +20,7 @@ const ServiceDetails = () => {
           <div className="text-center mx-auto">
             <h2 className="card-title text-3xl">
               {name}
-              <div className="badge badge-secondary">Price : {price}$</div>
+              <div className="badge badge-accent h-full">Price : {price}$</div>
             </h2>
           </div>
           <p>{description}</p>
