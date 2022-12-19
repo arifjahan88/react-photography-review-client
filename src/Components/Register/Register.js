@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import useTitle from "../Titlehooks/TitleHooks";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const { createuser, googlelogin } = useContext(AuthContext);
   useTitle("Register");
   const HandleSubmit = (event) => {
@@ -19,6 +22,23 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        const currentUser = {
+          email: user.email,
+        };
+        // get the jwt Token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("photoToken", data.token);
+            navigate(from, { replace: true });
+          });
         form.reset();
       })
       .catch((err) => console.error(err));
@@ -28,6 +48,23 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        const currentuser = {
+          email: user.email,
+        };
+        // get the jwt Token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentuser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("photoToken", data.token);
+            navigate(from, { replace: true });
+          });
       })
       .catch((err) => console.error(err));
   };

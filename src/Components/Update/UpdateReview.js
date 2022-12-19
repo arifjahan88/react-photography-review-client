@@ -4,6 +4,7 @@ import useTitle from "../Titlehooks/TitleHooks";
 const UpdateReview = () => {
   const navigate = useNavigate();
   const storeduser = useLoaderData();
+  console.log(storeduser);
   useTitle("Update Review");
 
   const HandleUpdate = (event) => {
@@ -18,16 +19,14 @@ const UpdateReview = () => {
       photourl,
       review,
     };
-    fetch(
-      `https://react-photography-review-server.vercel.app/updatereviews/${storeduser._id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(servicereview),
-      }
-    )
+    fetch(`http://localhost:5000/updatereviews/${storeduser._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("photoToken")}`,
+      },
+      body: JSON.stringify(servicereview),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

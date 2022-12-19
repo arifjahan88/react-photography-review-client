@@ -9,7 +9,7 @@ const Home = () => {
   const [limitservice, setlimitsservice] = useState([]);
   useTitle("Home");
   useEffect(() => {
-    fetch("https://react-photography-review-server.vercel.app/limitservice")
+    fetch("http://localhost:5000/limitservice")
       .then((res) => res.json())
       .then((data) => setlimitsservice(data));
   }, []);

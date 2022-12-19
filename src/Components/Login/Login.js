@@ -25,7 +25,7 @@ const Login = () => {
           email: user.email,
         };
         // get the jwt Token
-        fetch("https://react-photography-review-server.vercel.app/jwt", {
+        fetch("http://localhost:5000/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -51,7 +51,7 @@ const Login = () => {
           email: user.email,
         };
         // get the jwt Token
-        fetch("https://react-photography-review-server.vercel.app/jwt", {
+        fetch("http://localhost:5000/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
