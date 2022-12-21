@@ -10,11 +10,14 @@ const Reviews = () => {
   useTitle("My Reviews");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("photoToken")}`,
-      },
-    })
+    fetch(
+      `https://react-photography-review-server.vercel.app/reviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("photoToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logout();
@@ -27,12 +30,15 @@ const Reviews = () => {
   const handledelete = (id) => {
     const proceed = window.confirm("Are you sure to Delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("photoToken")}`,
-        },
-      })
+      fetch(
+        `https://react-photography-review-server.vercel.app/reviews/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("photoToken")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

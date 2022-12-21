@@ -18,14 +18,17 @@ const UpdateReview = () => {
       photourl,
       review,
     };
-    fetch(`http://localhost:5000/updatereviews/${storeduser._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("photoToken")}`,
-      },
-      body: JSON.stringify(servicereview),
-    })
+    fetch(
+      `https://react-photography-review-server.vercel.app/updatereviews/${storeduser._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("photoToken")}`,
+        },
+        body: JSON.stringify(servicereview),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

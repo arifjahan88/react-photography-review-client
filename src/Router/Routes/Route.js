@@ -36,7 +36,9 @@ export const routes = createBrowserRouter([
         path: "servicedetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/service/${params.id}`),
+          fetch(
+            `https://react-photography-review-server.vercel.app/service/${params.id}`
+          ),
       },
       {
         path: "reviews",
@@ -54,7 +56,9 @@ export const routes = createBrowserRouter([
           </Privateroutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updatereviews/${params.id}`),
+          fetch(
+            `https://react-photography-review-server.vercel.app/updatereviews/${params.id}`
+          ),
       },
       {
         path: "addservice",

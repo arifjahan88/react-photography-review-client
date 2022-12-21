@@ -9,7 +9,7 @@ const Services = () => {
   useTitle("Services");
 
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://react-photography-review-server.vercel.app/service")
       .then((res) => res.json())
       .then((data) => setservices(data));
   }, []);

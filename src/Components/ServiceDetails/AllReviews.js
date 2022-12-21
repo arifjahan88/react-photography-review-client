@@ -7,7 +7,7 @@ const AllReviews = () => {
   const { user } = useContext(AuthContext);
   const [allusers, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviewsall", {
+    fetch("https://react-photography-review-server.vercel.app/reviewsall", {
       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("photoToken")}`,

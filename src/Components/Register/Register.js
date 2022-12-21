@@ -29,7 +29,7 @@ const Register = () => {
           email: user.email,
         };
         // get the jwt Token
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://react-photography-review-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -59,7 +59,7 @@ const Register = () => {
           email: user.email,
         };
         // get the jwt Token
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://react-photography-review-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

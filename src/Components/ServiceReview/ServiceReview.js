@@ -19,7 +19,7 @@ const ServiceReview = () => {
       email: user.email,
       userphoto: user.photoURL,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://react-photography-review-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
