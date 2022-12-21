@@ -4,7 +4,6 @@ import useTitle from "../Titlehooks/TitleHooks";
 const UpdateReview = () => {
   const navigate = useNavigate();
   const storeduser = useLoaderData();
-  console.log(storeduser);
   useTitle("Update Review");
 
   const HandleUpdate = (event) => {

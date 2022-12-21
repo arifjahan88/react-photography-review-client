@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { toast } from "react-hot-toast";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -10,6 +11,7 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const { createuser, googlelogin } = useContext(AuthContext);
+  const [error, seterror] = useState("");
   useTitle("Register");
   const HandleSubmit = (event) => {
     event.preventDefault();
@@ -22,6 +24,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Register SuccessFull");
         const currentUser = {
           email: user.email,
         };
@@ -41,13 +44,17 @@ const Register = () => {
           });
         form.reset();
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        seterror(err.message);
+      });
   };
   const Handlegooglelogin = () => {
     googlelogin()
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Register SuccessFull");
         const currentuser = {
           email: user.email,
         };
@@ -66,7 +73,10 @@ const Register = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        seterror(err.message);
+      });
   };
   return (
     <div>
@@ -116,6 +126,7 @@ const Register = () => {
                   placeholder="password"
                   className="input input-bordered"
                 />
+                <p className="text-red-600 text-xs mt-2">{error}</p>
                 <label className="label">
                   <p href="#" className="label-text-alt link link-hover">
                     Forgot password?

@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { toast } from "react-hot-toast";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,16 +12,17 @@ const Login = () => {
   useTitle("Login");
   const from = location.state?.from?.pathname || "/";
   const { logIn, googlelogin } = useContext(AuthContext);
+  const [error, seterror] = useState("");
   const HandleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     logIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Login SuccessFull");
         const currentUser = {
           email: user.email,
         };
@@ -40,16 +42,21 @@ const Login = () => {
           });
         form.reset();
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        seterror(err.message);
+      });
   };
   const Handlegooglelogin = () => {
     googlelogin()
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Login SuccessFull");
         const currentuser = {
           email: user.email,
         };
+
         // get the jwt Token
         fetch("http://localhost:5000/jwt", {
           method: "POST",
@@ -65,7 +72,10 @@ const Login = () => {
             navigate(from, { replace: true });
           });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        seterror(err.message);
+      });
   };
   return (
     <div>
@@ -103,6 +113,7 @@ const Login = () => {
                   placeholder="password"
                   className="input input-bordered"
                 />
+                <p className="text-red-600 text-xs mt-2">{error}</p>
                 <label className="label">
                   <p href="#" className="label-text-alt link link-hover">
                     Forgot password?

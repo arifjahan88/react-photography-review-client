@@ -85,7 +85,7 @@ const AddService = () => {
             className="textarea textarea-bordered mt-5 w-full h-32"
             placeholder="Description"
           ></textarea>
-          <button className="btn btn-outline btn-sm">Update</button>
+          <button className="btn btn-outline btn-sm">Add</button>
         </form>
       </div>
     </div>

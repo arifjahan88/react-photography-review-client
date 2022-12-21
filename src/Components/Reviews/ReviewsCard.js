@@ -3,7 +3,6 @@ import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
 
 const ReviewsCard = ({ review, handledelete }) => {
-  console.log(review);
   return (
     <div className="rounded-xl border-gray-200 shadow-sm dark:border-gray-700 p-2 my-8">
       <figure className="justify-center items-center p-8 text-center bg-gray-300 rounded-xl border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
