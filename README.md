@@ -10,15 +10,5 @@
 8. I implement JWT Token in review options.
 9. lastly make my website responsive.
 
-### GitHub Client Link
 
-[https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-arifjahan88](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-arifjahan88)
-
-### GitHub Server Link
-
-[https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-arifjahan88](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-arifjahan88)
-
-### Live Server Link
-
-[https://react-photography-review.web.app/](https://react-photography-review.web.app/)
 
